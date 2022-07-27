@@ -49,7 +49,11 @@ export const Register = () => {
 
   const handleApple = () => {};
 
-  const handleSign = () => {};
+
+  //-----------------register function-----------------
+  const handleSign = () => {
+
+  };
   return (
     <div className={classes.root}>
       <div className={classes.contianer}>
@@ -76,7 +80,7 @@ export const Register = () => {
                 />
               </div>
               <ErrorMsg
-                show={true}
+                show={false}
                 value='Please enter a valid email address.'
                 className={classes.mt12}
               />
@@ -89,7 +93,7 @@ export const Register = () => {
                 value={email}
               />
               <ErrorMsg
-                show={true}
+                show={false}
                 value='Please enter a valid email address.'
                 className={classes.mt12}
               />
@@ -123,7 +127,7 @@ export const Register = () => {
                 />
               </div>
               <ErrorMsg
-                show={true}
+                show={false}
                 value='Please enter a valid email address.'
                 className={classes.mt12}
               />

@@ -1,31 +1,29 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { loginUser, logoutUser, registerUser } from "./actions";
+import { loginUser, registerUser } from "./actions";
 import { authState } from "./types";
 
 const PREFIX = "auth";
 
-let initToken;
-if (localStorage.jwtToken) {
-  initToken = true;
-} else {
-  initToken = false;
-}
-
 const initialState: authState = {
-  status: initToken,
   err: "",
+  select: "",
 };
 
-const handleLogin = (state: authState, payload: any) => {
+const handleRegister = (state: authState, payload: any) => {
   if (payload.Success) {
-    state.status = true;
   } else {
+    state.select = payload.Error.State;
     state.err = payload.Error.Msg;
   }
 };
 
-const logout = (state: authState) => {
-  state.status = false;
+const handleLogin = (state: authState, payload: any) => {
+  if (payload.Success) {
+    localStorage.setItem("userInfo", payload.Data);
+  } else {
+    state.select = payload.Error.State;
+    state.err = payload.Error.Msg;
+  }
 };
 
 export const authReducer = createSlice({
@@ -39,11 +37,14 @@ export const authReducer = createSlice({
         handleLogin(state, action.payload);
       }
     );
-    builder.addCase(logoutUser.fulfilled.type, (state: authState) => {
-      logout(state);
-    });
+    builder.addCase(
+      registerUser.fulfilled.type,
+      (state: authState, action: PayloadAction<any>) => {
+        handleRegister(state, action.payload);
+      }
+    );
   },
 });
 
-export { loginUser, logoutUser, registerUser };
+export { loginUser, registerUser };
 export default authReducer.reducer;

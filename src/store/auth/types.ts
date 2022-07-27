@@ -1,6 +1,6 @@
 interface authState {
-  status: boolean,
   err: "",
+  select: "",
 }
 
 export type { authState };
