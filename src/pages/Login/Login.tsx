@@ -8,7 +8,9 @@ export const Login = () => {
   const classes = useStyles();
   const [firstName, setFirstName] = useState("");
 
-  const handleFirstName = (e: any) => {};
+  const handleFirstName = (e: any) => {
+    setFirstName(e.target.value);
+  };
 
   return (
     <div className={classes.root}>
@@ -19,6 +21,7 @@ export const Login = () => {
             <img src={logo} className={classes.logo} />
             <div className={classes.title}>Sign Up</div>
             <ActionInput
+              type='password'
               title='First Name'
               action={(e) => handleFirstName(e)}
               placeholder='First Name'

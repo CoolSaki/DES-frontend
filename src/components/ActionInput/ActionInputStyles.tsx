@@ -2,7 +2,7 @@ import { createStyles, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 export const ActionInputStyles = makeStyles((theme: Theme) =>
   createStyles({
-    title:{
+    title: {
       fontFamily: "Inter",
       fontStyle: "normal",
       fontSize: "12px",
@@ -10,6 +10,19 @@ export const ActionInputStyles = makeStyles((theme: Theme) =>
       lineHeight: "28px",
       color: "#333333",
       marginBottom: "1px",
+    },
+    container: {
+      position: "relative",
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      "& i": {
+        position: "absolute",
+        top: "14px",
+        right: "16px",
+        color: "#C2C2C2",
+      },
     },
     root: {
       width: "100%",
@@ -34,14 +47,14 @@ export const ActionInputStyles = makeStyles((theme: Theme) =>
         color: "#C2C2C2",
         opacity: 1 /* Firefox */,
       },
-      "&:focus-visible":{
+      "&:focus-visible": {
         outline: "none",
       },
-      "&:focus":{
+      "&:focus": {
         outline: "none",
       },
     },
-    error:{
+    error: {
       fontFamily: "Inter",
       fontStyle: "normal",
       fontSize: "12px",

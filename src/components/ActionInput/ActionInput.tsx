@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { useState } from "react";
 import { ActionInputStyles } from "./ActionInputStyles";
 
 interface ActionInputProps {
@@ -10,6 +11,8 @@ interface ActionInputProps {
   type?: string;
   title: string;
   error?: string;
+  inLine?: React.ReactNode;
+
 }
 
 export default function ActionInput({
@@ -21,20 +24,44 @@ export default function ActionInput({
   type,
   title,
   error,
+  inLine,
 }: ActionInputProps) {
   const classes = ActionInputStyles();
-  console.log("test: ", error);
+  const [showStatus, setShowStatus] = useState(true);
+
+  const handleShow = () => {
+    setShowStatus(true);
+  };
+
+  const handleHide = () => {
+    setShowStatus(false);
+  };
 
   return (
     <>
       <div className={classes.title}>{title} *</div>
-      <input
-        type={type}
-        className={clsx(classes.root, className, error && classes.errorBorder)}
-        value={value}
-        placeholder={placeholder}
-        onChange={(e) => action(e)}
-      />
+      <div className={classes.container}>
+        <input
+          type={type === "password" && showStatus ? "password" : "text"}
+          className={clsx(
+            classes.root,
+            className,
+            error && classes.errorBorder
+          )}
+          value={value}
+          placeholder={placeholder}
+          onChange={(e) => action(e)}
+        />
+        {inLine}
+        {type !== "password" ? (
+          <></>
+        ) : showStatus ? (
+          <i className='far fa-eye' onClick={handleHide}></i>
+        ) : (
+          <i className='far fa-eye-slash' onClick={handleShow}></i>
+        )}
+
+      </div>
       {error ? <div className={classes.error}>{error}</div> : <></>}
     </>
   );
