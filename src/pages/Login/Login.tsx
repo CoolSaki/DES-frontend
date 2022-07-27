@@ -37,7 +37,7 @@ export const Login = () => {
           <img src={authImg} className={classes.mainImg} />
           <div className={classes.main}>
             <img src={logo} className={classes.logo} />
-            <div className={classes.title}>Sign Up</div>
+            <div className={classes.title}>Sign In</div>
             <div className={classes.md15}>
               <ActionInput
                 title='Email Address'
