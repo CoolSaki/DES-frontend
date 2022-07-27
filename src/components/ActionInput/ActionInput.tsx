@@ -38,7 +38,7 @@ export default function ActionInput({
   };
 
   return (
-    <>
+    <div className={clsx(classes.mainRoot, className)}>
       <div className={classes.title}>{title} *</div>
       <div className={classes.container}>
         <input
@@ -63,6 +63,6 @@ export default function ActionInput({
 
       </div>
       {error ? <div className={classes.error}>{error}</div> : <></>}
-    </>
+    </div>
   );
 }

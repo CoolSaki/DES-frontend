@@ -1,5 +1,3 @@
-/** @format */
-
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import BackgroundImg from "../../assets/images/auth_bg.png";
 
