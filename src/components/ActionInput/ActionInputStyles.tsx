@@ -17,9 +17,6 @@ export const ActionInputStyles = makeStyles((theme: Theme) =>
     container: {
       position: "relative",
       width: "100%",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
       "& i": {
         position: "absolute",
         top: "14px",
@@ -56,15 +53,6 @@ export const ActionInputStyles = makeStyles((theme: Theme) =>
       "&:focus": {
         outline: "none",
       },
-    },
-    error: {
-      fontFamily: "Inter",
-      fontStyle: "normal",
-      fontSize: "12px",
-      fontWeight: 400,
-      lineHeight: "15px",
-      color: "#FA3E3E",
-      marginTop: "11px",
     },
     errorBorder: {
       border: "1px solid #FA3E3E",

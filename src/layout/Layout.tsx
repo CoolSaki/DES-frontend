@@ -9,8 +9,8 @@ export default function Layout() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+        <Route path='/l' element={<Login />} />
+        <Route path='/' element={<Register />} />
       </Routes>
     </Router>
   );

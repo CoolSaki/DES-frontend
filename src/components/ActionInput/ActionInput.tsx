@@ -10,9 +10,7 @@ interface ActionInputProps {
   disable?: boolean;
   type?: string;
   title: string;
-  error?: string;
-  inLine?: React.ReactNode;
-
+  error?: boolean;
 }
 
 export default function ActionInput({
@@ -24,7 +22,6 @@ export default function ActionInput({
   type,
   title,
   error,
-  inLine,
 }: ActionInputProps) {
   const classes = ActionInputStyles();
   const [showStatus, setShowStatus] = useState(true);
@@ -45,14 +42,12 @@ export default function ActionInput({
           type={type === "password" && showStatus ? "password" : "text"}
           className={clsx(
             classes.root,
-            className,
             error && classes.errorBorder
           )}
           value={value}
           placeholder={placeholder}
           onChange={(e) => action(e)}
         />
-        {inLine}
         {type !== "password" ? (
           <></>
         ) : showStatus ? (
@@ -62,7 +57,6 @@ export default function ActionInput({
         )}
 
       </div>
-      {error ? <div className={classes.error}>{error}</div> : <></>}
     </div>
   );
 }
