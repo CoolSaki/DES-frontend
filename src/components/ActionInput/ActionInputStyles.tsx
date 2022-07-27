@@ -22,6 +22,7 @@ export const ActionInputStyles = makeStyles((theme: Theme) =>
         top: "14px",
         right: "16px",
         color: "#C2C2C2",
+        cursor: "pointer",
       },
     },
     root: {

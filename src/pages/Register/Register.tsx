@@ -1,5 +1,3 @@
-/** @format */
-
 import { useState } from "react";
 import { useStyles } from "./RegisterStyle";
 import authImg from "../../assets/images/auth_img.png";
@@ -8,6 +6,8 @@ import ActionInput from "components/ActionInput/ActionInput";
 import ActionSelect from "components/ActionSelect/ActionSelect";
 import ActionArrowButton from "components/ActionArrowButton/ActionArrowButton";
 import ErrorMsg from "components/ErrorMsg/ErrorMsg";
+import ServiceButton from "components/ServiceButton/ServiceButton";
+import { SERVICEBUTTON } from "config/constant";
 
 export const Register = () => {
   const classes = useStyles();
@@ -41,6 +41,13 @@ export const Register = () => {
   const handleSelect = (e: any) => {
     setSelect(e.target.value);
   };
+
+  //-----------------service button function ----------------------
+  const handleGoogle = () => {};
+
+  const handleFacebook = () => {};
+
+  const handleApple = () => {};
 
   const handleSign = () => {};
   return (
@@ -138,9 +145,23 @@ export const Register = () => {
               <div className={classes.signdivLineLetter}>or sign up with</div>
               <div className={classes.divLine}></div>
             </div>
-            {/* <div className={classes.inLine}>
-              <Service
-            </div> */}
+            <div className={classes.serviceBtnRoot}>
+              <ServiceButton
+                className={classes.serviceBtn}
+                type={SERVICEBUTTON.google}
+                action={handleGoogle}
+              />
+              <ServiceButton
+                className={classes.serviceBtn}
+                type={SERVICEBUTTON.facebook}
+                action={handleFacebook}
+              />
+              <ServiceButton
+                className={classes.serviceBtn}
+                type={SERVICEBUTTON.apple}
+                action={handleApple}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -118,6 +118,19 @@ export const useStyles = makeStyles((theme: Theme) =>
       background: "#E9E9E9",
       top: "50%",
     },
+    serviceBtnRoot:{
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      "& :last-child":{
+        marginRight: 0,
+      },
+    },
+    serviceBtn:{
+      width: "33%",
+      marginRight: "20px"
+    },
     inLine: {
       display: "flex",
       justifyContent: "center",

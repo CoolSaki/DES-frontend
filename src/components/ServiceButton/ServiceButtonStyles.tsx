@@ -11,6 +11,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "space-between",
       alignItems: "center",
       padding: "8px 22px 8px 16px",
+      cursor: "pointer",
     },
     icon:{
       width: "24px",

@@ -3,35 +3,37 @@ import { useStyles } from "./ServiceButtonStyles";
 import Google from "../../assets/icons/google.png";
 import Apple from "../../assets/icons/apple.png";
 import Facebook from "../../assets/icons/facebook.png";
+import { SERVICEBUTTON } from "config/constant";
 
 interface ServiceButtonProps {
   type: string;
   className?: any;
+  action: () => void;
 }
 
-export default function ServiceButton({ className, type }: ServiceButtonProps) {
+export default function ServiceButton({
+  className,
+  type,
+  action,
+}: ServiceButtonProps) {
   const classes = useStyles();
 
   return (
     <>
-      {type === "google" && (
-        <div className={clsx(className, classes.root)}>
-          <img src={Google} className={classes.icon} alt='service' />
-          <span className={classes.name}>Google</span>
-        </div>
-      )}
-      {type === "facebook" && (
-        <div className={clsx(className, classes.root)}>
-          <img src={Facebook} className={classes.icon} alt='service' />
-          <span className={classes.name}>Google</span>
-        </div>
-      )}
-      {type === "apple" && (
-        <div className={clsx(className, classes.root)}>
-          <img src={Apple} className={classes.icon} alt='service' />
-          <span className={classes.name}>Google</span>
-        </div>
-      )}
+      <div className={clsx(className, classes.root)} onClick={action}>
+        <img
+          src={
+            type === SERVICEBUTTON.google
+              ? Google
+              : type === SERVICEBUTTON.facebook
+              ? Facebook
+              : Apple
+          }
+          className={classes.icon}
+          alt='service'
+        />
+        <span className={classes.name}>{type}</span>
+      </div>
     </>
   );
 }

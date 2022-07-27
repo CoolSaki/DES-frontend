@@ -19,7 +19,7 @@ export default function ActionArrowButton({
 
   return (
     <div className={clsx(classes.root, className)} onClick={onClick}>
-      {value}
+      <span className={classes.btnValue}>{value}</span>
       <img src={RightArrow} className={classes.icon} />
     </div>
   );

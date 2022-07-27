@@ -7,6 +7,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       borderRadius: "100px",
       backgroundImage:
         "linear-gradient(80.02deg, #298432 -2.61%, #8DC63F 99.87%)",
+      transform: "rotate(180deg)",
       backgroundClip: "content-box, border-box",
       backgroundOrigin: "border-box",
       textAlign: "center",
@@ -17,16 +18,20 @@ export const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       height: "48px",
       position: "relative",
+    },
+    btnValue: {
       color: "#fff",
       fontFamily: "Inter",
       fontSize: "18px",
       fontWeight: 700,
       lineHeight: "22px",
+      transform: "rotate(180deg)",
     },
     icon: {
       position: "absolute",
       top: 15,
-      right: 31,
+      left: 31,
+      transform: "rotate(180deg)",
     },
   })
 );
