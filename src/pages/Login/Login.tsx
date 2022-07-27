@@ -7,9 +7,14 @@ import ErrorMsg from "components/ErrorMsg/ErrorMsg";
 import ServiceButton from "components/ServiceButton/ServiceButton";
 import { SERVICEBUTTON } from "config/constant";
 import ActionArrowButton from "components/ActionArrowButton/ActionArrowButton";
+import { useAppDispatch } from "store/hooks";
+import { useNavigate } from "react-router-dom";
+import { loginUser } from "store/auth";
 
 export const Login = () => {
   const classes = useStyles();
+  const dispatch = useAppDispatch();
+  const navigate =  useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,7 +33,18 @@ export const Login = () => {
 
   const handleApple = () => {};
 
-  const handleSign = () => {};
+
+  const handleRegister=()=>{
+    navigate("/register")
+  }
+  //--------------------login fucntion -----------------------
+  const handleSign = () => {
+    const param ={
+      email:  email,
+      password: password,
+    }
+    dispatch(loginUser(param))
+  };
 
   return (
     <div className={classes.root}>
@@ -80,7 +96,7 @@ export const Login = () => {
             />
             <div className={classes.signDes}>
               Don’t have an account?
-              <span className={classes.importantLetter}>Sign up</span>
+              <span className={classes.importantLetter} onClick={handleRegister}>Sign up</span>
             </div>
             <div className={classes.signdivLine}>
               <div className={classes.signdivLineLetter}>or continue with</div>
