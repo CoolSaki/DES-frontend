@@ -19,6 +19,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       backgroundPosition: "center",
+      padding: "24px",
     },
     mainRoot: {
       display: "flex",
@@ -28,9 +29,19 @@ export const useStyles = makeStyles((theme: Theme) =>
       boxShadow: "0px 1px 15px -2px rgba(0, 0, 0, 0.1)",
       borderRadius: "12px",
       background: "#fff",
+      [theme.breakpoints.down(960)]:{
+        padding: "24px",
+        flexDirection: "column",
+      }
     },
     mainImg: {
       width: "50%",
+      height: "100%",
+      [theme.breakpoints.down(960)]:{
+        maxWidth: "560px",
+        height: "auto",
+        width: "100%", 
+      }
     },
     main: {
       width: "50%",
