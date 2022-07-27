@@ -101,6 +101,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       lineHeight: "28px",
       color: "#298432",
       marginLeft: "3px",
+      cursor: "pointer",
     },
     signdivLine: {
       width: "100%",
