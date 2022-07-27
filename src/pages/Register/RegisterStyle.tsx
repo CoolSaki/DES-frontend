@@ -1,5 +1,3 @@
-/** @format */
-
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import BackgroundImg from "../../assets/images/auth_bg.png";
 
@@ -36,7 +34,7 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     main: {
       width: "50%",
-      padding: "54px 85px 85px 85px",
+      padding: "54px 85px 61px 85px",
       height: "100%",
     },
     logo: {
@@ -53,6 +51,73 @@ export const useStyles = makeStyles((theme: Theme) =>
       marginTop: "43px",
       marginBottom: "26px",
     },
+    checkRoot: {
+      display: "flex",
+      alignItems: "center",
+      marginBottom: "35px",
+      fontFamily: "Inter",
+      fontStyle: "normal",
+      fontWeight: 500,
+      fontSize: "12px",
+      lineHeight: "20px",
+      color: "#333333",
+    },
+    checkbox: {
+      outline: "1px solid #E9E9E9",
+      border: "none",
+      marginRight: "11px",
+    },
+    signBtn: {
+      marginBottom: "7px",
+    },
+    signDes: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      fontFamily: "Inter",
+      fontStyle: "normal",
+      fontWeight: 500,
+      fontSize: "14px",
+      lineHeight: "28px",
+      color: "#000",
+      marginBottom: "26px",
+    },
+    importantLetter: {
+      fontFamily: "Inter",
+      fontStyle: "normal",
+      fontWeight: 500,
+      fontSize: "14px",
+      lineHeight: "28px",
+      color: "#298432",
+      marginLeft: "3px",
+    },
+    signdivLine: {
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      position: "relative",
+      marginBottom: "29px",
+    },
+    signdivLineLetter: {
+      fontFamily: "Inter",
+      fontStyle: "normal",
+      fontWeight: 400,
+      fontSize: "12px",
+      lineHeight: "20px",
+      color: "#000",
+      zIndex: 1,
+      background: "#fff",
+      width: "fit-content",
+      padding: "0 8px",
+    },
+    divLine: {
+      height: "1px",
+      width: "100%",
+      position: "absolute",
+      background: "#E9E9E9",
+      top: "50%",
+    },
     inLine: {
       display: "flex",
       justifyContent: "center",
@@ -66,6 +131,9 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     mt12: {
       marginTop: "12px",
+    },
+    md15: {
+      marginBottom: "15px",
     },
   })
 );
