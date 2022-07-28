@@ -1,6 +1,10 @@
 import clsx from "clsx";
 import { useState } from "react";
 import { ActionInputStyles } from "./ActionInputStyles";
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 
 interface ActionInputProps {
   className?: any;
@@ -11,6 +15,7 @@ interface ActionInputProps {
   type?: string;
   title: string;
   error?: boolean;
+  inputType?:string;
 }
 
 export default function ActionInput({
@@ -22,6 +27,7 @@ export default function ActionInput({
   type,
   title,
   error,
+  inputType
 }: ActionInputProps) {
   const classes = ActionInputStyles();
   const [showStatus, setShowStatus] = useState(true);
@@ -38,6 +44,18 @@ export default function ActionInput({
     <div className={clsx(classes.mainRoot, className)}>
       <div className={classes.title}>{title} *</div>
       <div className={classes.container}>
+      
+      {inputType !== "signIn"? (
+          <></>
+        ) :  type!=="password" ? (
+          <div className={classes.iconDiv}><MailOutlineIcon className={clsx(
+            classes.signInIcon,
+          )}></MailOutlineIcon></div>
+        ) : (
+          <div className={classes.iconDiv}><LockOpenIcon className={clsx(
+            classes.signInIcon,
+          )}></LockOpenIcon></div>
+        )}
         <input
           type={type === "password" && showStatus ? "password" : "text"}
           className={clsx(
@@ -51,9 +69,9 @@ export default function ActionInput({
         {type !== "password" ? (
           <></>
         ) : showStatus ? (
-          <i className='far fa-eye' onClick={handleHide}></i>
+          <RemoveRedEyeOutlinedIcon className={classes.showStateIcon} onClick={handleHide}/>
         ) : (
-          <i className='far fa-eye-slash' onClick={handleShow}></i>
+          <VisibilityOffOutlinedIcon className={classes.showStateIcon} onClick={handleShow}/>
         )}
 
       </div>

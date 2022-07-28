@@ -60,6 +60,7 @@ export const Login = () => {
                 action={(e) => handleEmail(e)}
                 placeholder='Email'
                 value={email}
+                inputType="signIn"
               />
               <ErrorMsg
                 show={true}
@@ -75,10 +76,11 @@ export const Login = () => {
                 action={(e) => handlePassword(e)}
                 placeholder='Password'
                 value={password}
+                inputType="signIn"
               />
               <ErrorMsg
                 show={true}
-                value='Please enter a valid email address.'
+                value='Please enter a valid password.'
                 className={classes.mt12}
               />
             </div>
