@@ -47,6 +47,9 @@ export const useStyles = makeStyles((theme: Theme) =>
       width: "50%",
       padding: "54px 85px 61px 85px",
       height: "100%",
+      [theme.breakpoints.down(960)]:{
+        width: "100%",
+      }
     },
     logo: {
       width: "131.74px",
